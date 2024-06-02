@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <section class=setup>
+            <nav class="flexbox">
+                <h1 style="display: inline-block;">Wheel of Fortune</h1>
+                <button onclick="focusSection('game')">Play</button>
+            </nav>
+            <div class="flexbox">
+                <div>
+                    <p><label for="phrase">Secret Phrase:</label></p>
+                    <p><label for="category-input">Category:</label></p>
+                </div>
+                <div>
+                    <p><input type="password" id="phrase" value=""></p>
+                    <p><input type="text" id="category-input" value=""></p>
+                </div>
+            </div>
+            <p>
+                <label id="error_message"></label>
+            </p>
+            <div id="competitors"></div>
+            <p><button class='add-competitor' onclick="addCompetitor()">+ Competitor</button></p>
+        </section>
+
+        <section class="game inactive">
+            <div class=flexbox>
+
+                <h1>Category: <span id=category></span></h1>
+                <button onclick="focusSection('setup')">Reset</button>
+            </div>
+            <table id="board">
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </table>
+            <button class="reveal-board game-control">Reveal Board</button>
+            
+            <div class="flexbox">
+
+                <canvas id="wheel"></canvas>
+                
+                <div id="kb-wrapper">
+
+                    <p>Vowels cost $20</p>
+                    <p class="keyboard vowels">
+                        <button>A</button><button>E</button><button>I</button><button>O</button><button>U</button>
+                    </p>
+                    
+                    <p>Spin to guess a consonant</p>
+                    <p class="keyboard">
+                        <button>B</button><button>C</button><button>D</button><button>F</button><button>G</button><button>H</button><button>J</button>
+                    </p>
+                    <p class="keyboard">
+                        <button>K</button><button>L</button><button>M</button><button>N</button><button>P</button><button>Q</button><button>R</button>
+                    </p>
+                    <p class="keyboard">
+                        <button>S</button><button>T</button><button>V</button><button>W</button><button>X</button><button>Y</button><button>Z</button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flexbox2">
+
+                <button class="game" id="button-spin" onclick="spin()">Spin!</button>
+                <button class="spacer" onclick="pass()">Pass</button>
+            </div>
+
+            <div id="competitors-game"></div>
+        </section>
+
+        <script src="index.js"></script>
+    </body>
+</html>
