@@ -29,8 +29,8 @@ function focusSection(name) {
 }
 
 const phraseInput = document.getElementById("phrase")
-const category_input = document.getElementById('category-input');
-const category_text = document.getElementById('category');
+const category_input = document.querySelector('input#category');
+const category_text = document.querySelector('span#category');
 const error_message = document.getElementById("error_message");
 const board = document.getElementById("board")
 const board_lines = board.children[0].children;
